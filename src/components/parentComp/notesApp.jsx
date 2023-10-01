@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getInitialData } from "../../utils";
 import NoteList from "./noteList";
 import AddNotes from "../childComp/addNotes";
+import NavLogo from "../childComp/navbar";
 
 export default class NotesApp extends Component {
   constructor(props) {
@@ -34,17 +35,22 @@ export default class NotesApp extends Component {
   }
   render() {
     return (
-      <>
-        <h5>tambah catatan</h5>
-        <AddNotes addNote={this.onAddHandler} />
-        <h1>daftar catatan</h1>
-        <div className="notes-app">
-          <NoteList
-            dataNote={this.state.dataNote}
-            onDelete={this.onDeleteHandler}
-          />
+      <div className="root-container">
+        <NavLogo />
+        <div className="add-notes">
+          <h5>Buat Catatan</h5>
+          <AddNotes addNote={this.onAddHandler} />
         </div>
-      </>
+        <div className="daftar-notes">
+          <h5>daftar catatan</h5>
+          <div className="notes-app">
+            <NoteList
+              dataNote={this.state.dataNote}
+              onDelete={this.onDeleteHandler}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }

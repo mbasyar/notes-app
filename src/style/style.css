@@ -1,17 +1,21 @@
-
-.notes-app {
-    border: 1px solid blue;
-  
-  }
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kalam&display=swap');
+.root-container {
+    background-color: #0f0e17;
+}
+.navbar {
+    background-color: #f25f4c;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 39px;
+}
+.navbar-brand {
+    font-size: 25px;
+}
 .list-notes {
-    border: 1px solid rgb(196, 12, 43);
-    display: flex; 
     align-items: center;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    padding: 100px;
-    background-color: wheat;
+    padding: 20px 100px;
   }
 
 .card-container {
@@ -24,7 +28,7 @@
     }
 
 .card {
-    height: 34S0px;
+    height: 340px;
     padding: 5px;
     }
 .date {
@@ -34,14 +38,17 @@
 .tombol {
     display: flex;
     justify-content: space-between;
+ 
+}
+.add-notes {
+    margin-top: 10px;
 }
 .notes-input {
     margin: auto;
-    border: 1px solid blue;
+    border: none !important;
+    border-style: none;
     width: 700px;
-    border-radius: 8px;
     padding: 15px;
-   
 }
 .input-title {
     width: 100%;
@@ -51,17 +58,42 @@
     border: 1px solid rgb(0, 174, 255);
     border-radius: 5px;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
+    font-weight: 500;
 }
 .input-body {
     width: 100%;
-    height: 200px;
+    height: 120px;
     color: rgb(0, 0, 44);
     border: 1px solid rgb(9, 17, 20);
     border-radius: 5px;
     margin-bottom: 10px;
-    padding-bottom: 180px;
+    padding-bottom: 80px;
+    padding-left: 10px; 
+    outline: none;
+    border: none;
 }
 .btn-add {
     width: 100%;
-    height: 30px;
+    height: 30px;   
+    background-color: #ff8906 !important;
+    border: none;
+}
+.daftar-notes {
+    margin-top: 30px;
+}
+.daftar-notes h5 {
+    text-align: left;
+    padding-left: 150px;
+    padding-bottom: 0;
+}
+h5 {
+    color: #fffffe;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    font-size: 28px
+}
+p {
+   font-family: 'Kalam', cursive;
 }

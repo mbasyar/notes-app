@@ -23,7 +23,7 @@ const NoteItem = ({ createdAt, title, body, onDelete, onArchive, id }) => {
           </Card.Text>
           <div className="tombol">
             <Card.Link href="#">
-              <ArsipBtn onArchive={onArchive} />
+              <ArsipBtn onArchive={onArchive} id={id} />
             </Card.Link>
             <Card.Link href="#">
               <DeleteBtn onDelete={onDelete} id={id} />{" "}

@@ -41,7 +41,7 @@ class AddNotes extends React.Component {
         <input
           className="input-title"
           type="text"
-          placeholder="masukan judul.."
+          placeholder="Masukan Judul"
           onChange={this.onTitleChangeEventHandler}
           value={this.state.title}
         />{" "}
@@ -49,13 +49,13 @@ class AddNotes extends React.Component {
         <input
           className="input-body"
           type="text"
-          placeholder="ketikan notes kamu.."
+          placeholder="ketikan kata-kata mutiara kamu.."
           onChange={this.onBodyChangeEventHandler}
           value={this.state.body}
         />{" "}
         <br />
         <Button variant="primary" size="sm" type="submit" className="btn-add">
-          add notes
+          ADD NOTES
         </Button>
       </form>
     );

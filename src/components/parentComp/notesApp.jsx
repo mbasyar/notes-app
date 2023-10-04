@@ -42,6 +42,7 @@ export default class NotesApp extends Component {
             id: +new Date(),
             title,
             body,
+            createdAt: new Date().toLocaleString(),
           },
         ],
       };
@@ -54,10 +55,12 @@ export default class NotesApp extends Component {
 
     return (
       <div className="root-container">
+        {/* input new notes */}
         <div className="add-notes">
           <h5>Buat Catatan</h5>
           <AddNotes addNote={this.onAddHandler} />
         </div>
+        {/* list notes */}
         <div className="daftar-notes">
           <h5>daftar catatan</h5>
           <div className="notes-app">

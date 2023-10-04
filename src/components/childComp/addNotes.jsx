@@ -8,6 +8,7 @@ class AddNotes extends React.Component {
     this.state = {
       title: "",
       body: "",
+      remainingCharacters: 50,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -16,43 +17,53 @@ class AddNotes extends React.Component {
   }
 
   onTitleChangeEventHandler(event) {
-    this.setState(() => {
-      return {
-        title: event.target.value,
-      };
-    });
+    const newTitle = event.target.value;
+    const remainingCharacters = 50 - newTitle.length;
+    if (remainingCharacters >= 0) {
+      this.setState({
+        title: newTitle,
+        remainingCharacters: remainingCharacters,
+      });
+    }
   }
 
   onBodyChangeEventHandler(event) {
-    this.setState(() => {
-      return {
-        body: event.target.value,
-      };
+    this.setState({
+      body: event.target.value,
     });
   }
 
   onSubmitEventHandler(event) {
     event.preventDefault();
-    this.props.addNote(this.state);
+    this.props.addNote({
+      title: this.state.title,
+      body: this.state.body,
+    });
   }
+
   render() {
     return (
       <form className="notes-input" onSubmit={this.onSubmitEventHandler}>
+        <span className="character-count">
+          Karakter tersisa: {this.state.remainingCharacters}
+        </span>
         <input
           className="input-title"
           type="text"
           placeholder="Masukan Judul"
           onChange={this.onTitleChangeEventHandler}
           value={this.state.title}
-        />{" "}
+        />
+        <br />
+
         <br />
         <input
           className="input-body"
           type="text"
-          placeholder="ketikan kata-kata mutiara kamu.."
+          placeholder="Ketikkan kata-kata mutiara kamu..."
           onChange={this.onBodyChangeEventHandler}
           value={this.state.body}
-        />{" "}
+        />
         <br />
         <Button variant="primary" size="sm" type="submit" className="btn-add">
           ADD NOTES

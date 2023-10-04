@@ -1,48 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kalam&display=swap");
+
 body {
   margin: 0px;
   padding: 0px;
 }
-
 .root-container {
   background-color: #0f0e17;
   padding-top: 20px;
 }
-.list-notes {
-  align-items: center;
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 100px;
+.navbar {
+  background-color: #ff8906;
+  border: 1px solid red;
 }
-
-.card-container {
-  border: 2px solid #ff8b0671;
-  width: 330px;
-  margin: auto;
-  margin-right: 10px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+.navbar-brand {
+  color: white;
+  font-size: 28px;
+  font-family: "Bebas Neue", sans-serif;
 }
-.card-container:hover {
-  box-sizing: border-box;
-  box-shadow: 4px 3px 8px 0px #ff8906;
+.logo-note {
+  border-radius: 50%;
+  margin-right: 6px;
 }
-.card {
-  height: auto;
-  padding: 5px;
-}
-.date {
-  padding-bottom: 10px;
-  border-bottom: 1px solid black;
-}
-.tombol {
-  display: flex;
-  justify-content: space-between;
+/* add notes */
+.daftar-notes {
+  justify-content: center;
 }
 .add-notes {
   margin-top: 10px;
 }
+
 .notes-input {
   margin: auto;
   border: none !important;
@@ -80,6 +66,46 @@ body {
   background-color: #ff8906 !important;
   border: none;
 }
+.character-count {
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+/* notes active */
+.list-notes {
+  align-items: center;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 100px;
+  gap: 30px;
+}
+
+.card:hover {
+  box-sizing: border-box;
+  box-shadow: 4px 3px 8px 0px #ff8906;
+}
+.card {
+  border: 2px solid #ff8b0671;
+  height: auto;
+  padding: 5px;
+  width: 330px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+.date {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.tombol {
+  display: flex;
+  justify-content: space-between;
+}
+.notes-notfound {
+  color: #ff8906;
+  font-family: "Kalam", cursive;
+}
 .daftar-notes {
   margin-top: 30px;
 }
@@ -97,27 +123,25 @@ h5 {
 p {
   font-family: "Kalam", cursive;
 }
-.notes-notfound {
-  border: 1px solid white;
-  padding: 10px;
-  color: red;
-}
+
+/*archive*/
 .cont-archive {
-  background-color: aqua;
-  width: 100%;
-  height: auto;
-  padding-top: 20px;
+  align-items: center;
+  width: 100vw;
   display: flex;
-  flex-wrap: wrap-reverse;
-  justify-content: left;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 30px 100px;
+  gap: 30px;
 }
-.card-archive {
-  justify-content: left;
-  border: 2px solid #ff8b0671;
+.card-archived {
+  height: auto;
+  padding: 5px;
   width: 330px;
-  margin: auto;
-  margin-right: 10px;
   margin-bottom: 15px;
   border-radius: 10px;
+}
+
+.archive-notfoun {
+  color: #ff8906;
+  font-family: "Kalam", cursive;
 }

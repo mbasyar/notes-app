@@ -8,7 +8,7 @@ import ArsipBtn from "../childComp/arsipBtn";
 
 const NoteItem = ({ createdAt, title, body, onDelete, onArchive, id }) => {
   return (
-    <div className="card-container">
+    <div>
       <Card className="card">
         <Card.Body>
           <Card.Title>
@@ -23,10 +23,10 @@ const NoteItem = ({ createdAt, title, body, onDelete, onArchive, id }) => {
           </Card.Text>
           <div className="tombol">
             <Card.Link href="#">
-              <ArsipBtn onArchive={onArchive} id={id} />
+              <DeleteBtn onDelete={onDelete} id={id} />{" "}
             </Card.Link>
             <Card.Link href="#">
-              <DeleteBtn onDelete={onDelete} id={id} />{" "}
+              <ArsipBtn onArchive={onArchive} id={id} />
             </Card.Link>
           </div>
         </Card.Body>

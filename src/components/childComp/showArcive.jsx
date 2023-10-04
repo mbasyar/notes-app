@@ -14,8 +14,8 @@ class ShowArchive extends Component {
       <div className="cont-archive">
         {archivedNotes.length > 0 ? (
           archivedNotes.map((note) => (
-            <div className="card-archive">
-              <Card className="card" key={note.id}>
+            <div className="card-archived">
+              <Card className="card-archive" key={note.id}>
                 <Card.Body>
                   <Card.Title>
                     {" "}
@@ -27,20 +27,19 @@ class ShowArchive extends Component {
                   <Card.Text>
                     <NoteBody body={note.body} />
                   </Card.Text>
-                  <div className="tombol">
-                    {/* <Card.Link href="#">
+
+                  {/* <Card.Link href="#">
                       <ArsipBtn onArchive={note.onArchive} id={id} />
                     </Card.Link> */}
-                    <Card.Link href="#">
-                      <p>catatan ini telah di arsipkan</p>
-                    </Card.Link>
-                  </div>
+                  <Card.Link href="#">
+                    <p>Catatan ini telah di Arsipkan</p>
+                  </Card.Link>
                 </Card.Body>
               </Card>
             </div>
           ))
         ) : (
-          <h5>arsip kosong</h5>
+          <h5 className="archive-notfoun">Arsip Kosong</h5>
         )}
       </div>
     );

@@ -5,15 +5,15 @@ import Container from "react-bootstrap/Container";
 const NavLogo = () => {
   return (
     <div>
-      <Navbar data-bs-theme="dark">
+      <Navbar data-bs-theme="light">
         <Container>
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src="/public/note.jpg"
+              src="/public/notess.jpg"
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top logo-note"
             />{" "}
             Notes App 2023
           </Navbar.Brand>

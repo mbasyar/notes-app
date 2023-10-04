@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import NoteTitle from "../childComp/noteTitle";
 import NoteBody from "../childComp/noteBody";
 import NoteDate from "../childComp/noteDate";
-import DeleteBtn from "../childComp/deleteBtn";
+import DeleteBtn from "./button/deleteBtn";
 // import ArsipBtn from "../childComp/arsipBtn";
 
 class ShowArchive extends Component {
@@ -27,6 +27,14 @@ class ShowArchive extends Component {
                   <Card.Text>
                     <NoteBody body={note.body} />
                   </Card.Text>
+                  <div className="tombol">
+                    <Card.Link href="#">
+                      <DeleteBtn />{" "}
+                    </Card.Link>
+                    <Card.Link href="#">
+                      <ArsipBtn />
+                    </Card.Link>
+                  </div>
 
                   {/* <Card.Link href="#">
                       <ArsipBtn onArchive={note.onArchive} id={id} />

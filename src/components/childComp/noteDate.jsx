@@ -4,7 +4,7 @@ const NoteDate = ({ createdAt }) => {
   return (
     <div>
       {" "}
-      <p className="date">{createdAt}</p>
+      <p>{createdAt}</p>
     </div>
   );
 };

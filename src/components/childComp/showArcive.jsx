@@ -5,17 +5,17 @@ import NoteTitle from "../childComp/noteTitle";
 import NoteBody from "../childComp/noteBody";
 import NoteDate from "../childComp/noteDate";
 import DeleteBtn from "./button/deleteBtn";
-import ArsipBtn from "./button/arsipBtn";
+import PindahBtn from "./button/pindahBtn";
 
 class ShowArchive extends Component {
   render() {
-    const { archivedNotes } = this.props;
+    const { archivedNotes, onDelete, onMove } = this.props;
 
     return (
       <div className="list-card-archive">
         {archivedNotes.length > 0 ? (
           archivedNotes.map((note) => (
-            <div>
+            <div key={note.id}>
               <CardGroup>
                 <Card className="card-container" key={note.id}>
                   <Card.Body>
@@ -32,7 +32,9 @@ class ShowArchive extends Component {
                   </Card.Body>
                   <Card.Footer>
                     <div className="card_tombol">
-                      <DeleteBtn /> <ArsipBtn />
+                      <DeleteBtn onDelete={() => onDelete(note.id)} />
+
+                      <PindahBtn onMove={() => onMove(note.id)} />
                     </div>
                   </Card.Footer>
                 </Card>

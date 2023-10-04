@@ -13,6 +13,7 @@ export default class NotesApp extends Component {
     };
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onAddHandler = this.onAddHandler.bind(this);
+    this.onMoveHandler = this.onMoveHandler.bind(this);
   }
 
   toggleArchive = (id) => {
@@ -29,8 +30,11 @@ export default class NotesApp extends Component {
   };
 
   onDeleteHandler(id) {
+    console.log("Menghapus catatan dengan ID:", id);
+    const { archivedNotes } = this.state;
+    const updatedArchivedNotes = archivedNotes.filter((note) => note.id !== id);
     const dataNote = this.state.dataNote.filter((note) => note.id !== id);
-    this.setState({ dataNote });
+    this.setState({ dataNote, archivedNotes: updatedArchivedNotes });
   }
 
   onAddHandler({ title, body }) {
@@ -49,6 +53,20 @@ export default class NotesApp extends Component {
     });
     alert("note baru telah ditambahkan");
   }
+  onMoveHandler(id) {
+    const { archivedNotes, dataNote } = this.state;
+    const movedNote = archivedNotes.find((note) => note.id === id);
+
+    if (movedNote) {
+      const updatedArchivedNotes = archivedNotes.filter(
+        (note) => note.id !== id
+      );
+      this.setState({
+        archivedNotes: updatedArchivedNotes,
+        dataNote: [...dataNote, movedNote],
+      });
+    }
+  }
 
   render() {
     const { dataNote, archivedNotes } = this.state;
@@ -64,7 +82,7 @@ export default class NotesApp extends Component {
           <h5>daftar catatan</h5>
           <div>
             {dataNote.length === 0 ? (
-              <h5 className="notes-notfound-title">Catatan Kosong...</h5>
+              <h5 className="notes-notfound-title">Tidak ada Catatan...</h5>
             ) : (
               <NoteList
                 dataNote={dataNote}
@@ -77,7 +95,11 @@ export default class NotesApp extends Component {
             <h5>arsip catatan</h5>
           </div>
           <div className="container-arsip">
-            <ShowArchive archivedNotes={archivedNotes} />
+            <ShowArchive
+              archivedNotes={archivedNotes}
+              onDelete={this.onDeleteHandler}
+              onMove={this.onMoveHandler}
+            />
           </div>
         </div>
       </div>

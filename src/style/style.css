@@ -3,6 +3,8 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-color: rgb(136, 255, 0);
+  box-sizing: border-box;
 }
 /* navbar */
 .navbar {
@@ -21,40 +23,45 @@ body {
 /* main container */
 .root-container {
   background-color: #0f0e17;
-  padding-top: 20px;
+  padding: 20px 0px;
+  width: 100%;
+  height: auto;
 }
 
 /* input new notes */
-.daftar-notes {
+.container-input {
+  margin: auto;
+  width: 100%;
   justify-content: center;
-}
-.add-notes {
-  margin-top: 10px;
+  align-items: center;
 }
 .notes-input {
+  width: 50%;
   margin: auto;
-  border: none !important;
-  border-style: none;
-  width: 700px;
-  padding: 15px;
+}
+.character-count {
+  color: rgba(255, 255, 255, 0.74);
+  justify-content: center;
+  align-items: center;
+  display: block;
 }
 .input-title {
+  justify-content: center;
   width: 100%;
   height: 50px;
   color: rgb(0, 0, 44);
   padding: 10px;
-  border: 1px solid rgb(0, 174, 255);
   border-radius: 5px;
   margin-bottom: 10px;
   outline: none;
   border: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 .input-body {
   width: 100%;
   height: 120px;
+  font-family: "Kalam", cursive;
   color: rgb(0, 0, 44);
-  border: 1px solid rgb(9, 17, 20);
   border-radius: 5px;
   margin-bottom: 10px;
   padding-bottom: 80px;
@@ -68,50 +75,59 @@ body {
   background-color: #ff8906 !important;
   border: none;
 }
-.character-count {
-  color: white;
-  justify-content: center;
-  align-items: center;
-}
+
 /* container-card active  */
 .list-card-notes {
   align-items: center;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   padding: 30px 100px;
   gap: 30px;
 }
 /* card active  */
-.card:hover {
-  box-sizing: border-box;
-  box-shadow: 4px 3px 8px 0px #ff8906;
-}
-.card {
-  border: 2px solid #ff8b0671;
-  height: auto;
-  padding: 5px;
+.card-container {
+  border: 1px solid none;
+  height: 350px;
   width: 330px;
+  padding: 0px;
   margin-bottom: 15px;
   border-radius: 10px;
+  box-shadow: 3px 2px 9px 0px #ff8906;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.card-container:hover {
+  box-shadow: 6px 4px 8px 0px #ff8906;
+}
+.card_title {
+  font-family: "Bebas Neue", sans-serif !important;
+  text-align: center;
+  font-size: large;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .card_date {
-  padding-bottom: 10px;
+  text-align: center;
+  padding-bottom: 2px;
   border-bottom: 1px solid black;
+}
+.card-footer {
+  background-color: #ff8906;
 }
 .card_tombol {
   display: flex;
   justify-content: space-between;
+  align-items: last baseline;
 }
-.notes-notfound {
+.notes-notfound-title {
   color: #ff8906;
   font-family: "Kalam", cursive;
 }
-.daftar-notes {
-  margin-top: 30px;
-}
-.daftar-notes h5 {
+.note-active-title h5 {
   text-align: left;
+  margin-top: 40px;
   padding-left: 150px;
   padding-bottom: 0;
 }
@@ -124,24 +140,43 @@ h5 {
 p {
   font-family: "Kalam", cursive;
 }
-/* container archive */
-.cont-archive {
+/* card archive*/
+.list-card-archive {
   align-items: center;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 30px 100px;
   gap: 30px;
+  padding: 30px 100px;
 }
-/* card archive*/
-.card-archived {
-  height: auto;
-  padding: 5px;
-  width: 330px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+.note-archive-title h5 {
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 150px;
+  padding-bottom: 0;
 }
-.archive-notfoun {
-  color: #ff8906;
-  font-family: "Kalam", cursive;
+
+@media screen and (max-width: 500px) {
+  .container-input {
+    width: 100%;
+  }
+  .notes-input {
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+  }
+  .list-card-notes {
+    padding: 15px;
+  }
+  .card-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+  }
+  .notes-notfound-title {
+    font-size: 20px;
+  }
+  .list-card-archive {
+    padding: 15px;
+  }
 }

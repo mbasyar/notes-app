@@ -43,32 +43,34 @@ class AddNotes extends React.Component {
 
   render() {
     return (
-      <form className="notes-input" onSubmit={this.onSubmitEventHandler}>
-        <span className="character-count">
-          Karakter tersisa: {this.state.remainingCharacters}
-        </span>
-        <input
-          className="input-title"
-          type="text"
-          placeholder="Masukan Judul"
-          onChange={this.onTitleChangeEventHandler}
-          value={this.state.title}
-        />
-        <br />
+      <div className="container-input">
+        <form className="notes-input" onSubmit={this.onSubmitEventHandler}>
+          <span className="character-count">
+            Karakter tersisa: {this.state.remainingCharacters}
+          </span>
+          <input
+            className="input-title"
+            type="text"
+            placeholder="Masukan Judul"
+            onChange={this.onTitleChangeEventHandler}
+            value={this.state.title}
+          />
+          <br />
 
-        <br />
-        <input
-          className="input-body"
-          type="text"
-          placeholder="Ketikkan kata-kata mutiara kamu..."
-          onChange={this.onBodyChangeEventHandler}
-          value={this.state.body}
-        />
-        <br />
-        <Button variant="primary" size="sm" type="submit" className="btn-add">
-          ADD NOTES
-        </Button>
-      </form>
+          <br />
+          <input
+            className="input-body"
+            type="text"
+            placeholder="Ketikkan kata-kata mutiara kamu..."
+            onChange={this.onBodyChangeEventHandler}
+            value={this.state.body}
+          />
+          <br />
+          <Button variant="primary" size="sm" type="submit" className="btn-add">
+            ADD NOTES
+          </Button>
+        </form>
+      </div>
     );
   }
 }

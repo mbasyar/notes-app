@@ -52,20 +52,19 @@ export default class NotesApp extends Component {
 
   render() {
     const { dataNote, archivedNotes } = this.state;
-
     return (
       <div className="root-container">
         {/* input new notes */}
-        <div className="add-notes">
+        <div className="add_notestitle">
           <h5>Buat Catatan</h5>
           <AddNotes addNote={this.onAddHandler} />
         </div>
         {/* list notes */}
-        <div className="daftar-notes">
+        <div className="note-active-title">
           <h5>daftar catatan</h5>
-          <div className="notes-app">
+          <div>
             {dataNote.length === 0 ? (
-              <h5 className="notes-notfound">Catatan Kosong</h5>
+              <h5 className="notes-notfound-title">Catatan Kosong...</h5>
             ) : (
               <NoteList
                 dataNote={dataNote}
@@ -74,8 +73,10 @@ export default class NotesApp extends Component {
               />
             )}
           </div>
-          <div className="archive-notes">
+          <div className="note-archived-title">
             <h5>arsip catatan</h5>
+          </div>
+          <div className="container-arsip">
             <ShowArchive archivedNotes={archivedNotes} />
           </div>
         </div>

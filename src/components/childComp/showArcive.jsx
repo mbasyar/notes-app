@@ -1,53 +1,46 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
 import NoteTitle from "../childComp/noteTitle";
 import NoteBody from "../childComp/noteBody";
 import NoteDate from "../childComp/noteDate";
 import DeleteBtn from "./button/deleteBtn";
-// import ArsipBtn from "../childComp/arsipBtn";
+import ArsipBtn from "./button/arsipBtn";
 
 class ShowArchive extends Component {
   render() {
     const { archivedNotes } = this.props;
 
     return (
-      <div className="cont-archive">
+      <div className="list-card-archive">
         {archivedNotes.length > 0 ? (
           archivedNotes.map((note) => (
-            <div className="card-archived">
-              <Card className="card-archive" key={note.id}>
-                <Card.Body>
-                  <Card.Title>
-                    {" "}
-                    <NoteTitle title={note.title} />{" "}
-                  </Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    <NoteDate createdAt={note.createdAt} />
-                  </Card.Subtitle>
-                  <Card.Text>
-                    <NoteBody body={note.body} />
-                  </Card.Text>
-                  <div className="tombol">
-                    <Card.Link href="#">
-                      <DeleteBtn />{" "}
-                    </Card.Link>
-                    <Card.Link href="#">
-                      <ArsipBtn />
-                    </Card.Link>
-                  </div>
-
-                  {/* <Card.Link href="#">
-                      <ArsipBtn onArchive={note.onArchive} id={id} />
-                    </Card.Link> */}
-                  <Card.Link href="#">
-                    <p>Catatan ini telah di Arsipkan</p>
-                  </Card.Link>
-                </Card.Body>
-              </Card>
+            <div>
+              <CardGroup>
+                <Card className="card-container" key={note.id}>
+                  <Card.Body>
+                    <Card.Title className="card_title">
+                      {" "}
+                      <NoteTitle title={note.title} />{" "}
+                    </Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted card_date">
+                      <NoteDate createdAt={note.createdAt} />
+                    </Card.Subtitle>
+                    <Card.Text>
+                      <NoteBody body={note.body} />
+                    </Card.Text>
+                  </Card.Body>
+                  <Card.Footer>
+                    <div className="card_tombol">
+                      <DeleteBtn /> <ArsipBtn />
+                    </div>
+                  </Card.Footer>
+                </Card>
+              </CardGroup>
             </div>
           ))
         ) : (
-          <h5 className="archive-notfoun">Arsip Kosong</h5>
+          <h5 className="notes-notfound-title">Arsip Kosong...</h5>
         )}
       </div>
     );
